@@ -10,12 +10,19 @@ from classes.round import Round
 from classes.score import Score
 
 def main():
+    # pygame setup
+    pygame.init()
+    screen = pygame.display.set_mode((1280, 720))
+    clock = pygame.time.Clock()
+    fps = 30
+    running = True
+    
     # game setup
     # player_name = input('Enter your name: ') # under construction
     player = Player("player_name")
     computer = Player("computer")
     players = [player, computer]
-    Deck(players)
+    Deck(screen, players)
     
     # position cards
     xPos = 100
@@ -27,13 +34,6 @@ def main():
     for card in computer.hand:
         card.position = (xPos, 100)
         xPos += 100
-    
-    # pygame setup
-    pygame.init()
-    screen = pygame.display.set_mode((1280, 720))
-    clock = pygame.time.Clock()
-    running = True
-
     
     # game loop
     while running:
@@ -47,16 +47,16 @@ def main():
         
         # game rendering
         for card in player.hand:
-            card.draw(screen)
-            card.event_handler(event, screen)
+            card.draw()
+            card.event_handler(event)
             
         for card in computer.hand:
-            card.draw_back(screen)            
+            card.draw_back()    
 
         # display
         pygame.display.flip()
 
-        clock.tick(60)  # FPS limit
+        clock.tick(fps)  # FPS limit
 
     pygame.quit()
     

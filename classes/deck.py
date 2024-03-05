@@ -6,7 +6,8 @@ import random, re, pygame
 from classes.card import Card
 
 class Deck:
-    def __init__(self, players:list):
+    def __init__(self, screen:object, players:list):
+        self.screen = screen
         self.cards = self.create_deck()
         self.shuffle()
         self.deal(players)
@@ -24,7 +25,7 @@ class Deck:
                 # rank_path = (re.findall(r'\b\w', rank)[0]).lower()
                 rank_path = rank.lower()
                 image = pygame.image.load(f'images/{suit_path}{rank_path}.png')
-                cards.append(Card(suit, rank, image, 0, 0))
+                cards.append(Card(suit, rank, image, self.screen, 0, 0))
         return cards
     
     def deal(self, players):
