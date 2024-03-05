@@ -1,3 +1,7 @@
+# Python poker card game
+# Jonathan Gabioud
+# 2024-03-05
+
 import random, re
 from classes.card import Card
 
