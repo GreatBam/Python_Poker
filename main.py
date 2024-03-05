@@ -10,16 +10,16 @@ from classes.score import Score
 # from classes.card import Card
 
 def main():
-    deck = Deck()
 
     player_name = input('Enter your name: ')
     player = Player(player_name, [])
     computer = Player("computer", [])
     players = [player, computer]
+    Deck(players)
 
+    # tests
+    for card in player.hand:
+        print(card.suit, card.rank, card.img_path)
+    
 if __name__ == "__main__":
     main()
-
-# tests
-for card in deck.cards:
-    print(card.suit, card.rank, card.img_path)

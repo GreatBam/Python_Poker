@@ -2,9 +2,10 @@ import random, re
 from classes.card import Card
 
 class Deck:
-    def __init__(self):
+    def __init__(self, players:list):
         self.cards = self.create_deck()
         self.shuffle()
+        self.deal(players)
         
     def shuffle(self):
         random.shuffle(self.cards)
@@ -19,3 +20,8 @@ class Deck:
                 rank_path = (re.findall(r'\b\w', rank)[0]).lower()
                 cards.append(Card(suit, rank, f'images/{rank_path}{suit_path}.png'))
         return cards
+    
+    def deal(self, players):
+        for _ in range(5):
+            for player in players:
+                player.hand.append(self.cards.pop(0))
