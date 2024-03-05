@@ -10,9 +10,8 @@ from classes.round import Round
 from classes.score import Score
 
 def main():
-    # INITIAL SETUP
     # game setup
-    # player_name = input('Enter your name: ')
+    # player_name = input('Enter your name: ') # under construction
     player = Player("player_name")
     computer = Player("computer")
     players = [player, computer]
@@ -28,11 +27,6 @@ def main():
     for card in computer.hand:
         card.position = (xPos, 100)
         xPos += 100
-        
-    #test
-    # for card in deck.cards:
-    #     print(card.suit, card.rank, card.img_path)
-    # /////////////////////////////////////////
     
     # pygame setup
     pygame.init()
@@ -41,18 +35,17 @@ def main():
     running = True
 
     
-    #pygame setup, under construction
+    # game loop
     while running:
-        # poll for events
-        # pygame.QUIT event means the user clicked X to close your window
+        # event handling
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
 
-        # fill the screen with a color to wipe away anything from last frame
+        # screen background color
         screen.fill("green")
         
-        # RENDER YOUR GAME HERE
+        # game rendering
         for card in player.hand:
             card.draw(screen)
             card.event_handler(event, screen)
@@ -60,31 +53,32 @@ def main():
         for card in computer.hand:
             card.draw_back(screen)            
 
-        # flip() the display to put your work on screen
+        # display
         pygame.display.flip()
 
-        clock.tick(60)  # limits FPS to 60
+        clock.tick(60)  # FPS limit
 
     pygame.quit()
     
-    # /////////////// TERMINAL GAME REMAINDER /////////////// *
-    
-    # # ask for player's name
-    # player_name = input('Enter your name: ')
-    # # create player and computer
-    # player = Player(player_name)
-    # computer = Player("computer")
-    # players = [player, computer]
-    # # create deck
-    # deck = Deck(players)
-    # # start  round
-    # round =Round(player.hand, computer.hand, deck)
-    # round.show_player_hand()
-    # # ask player for cards to change
-    # round.ask_cards_change()
-    # # show computer hand
-    # print('Computer hand is:')
-    # round.show_computer_hand()
     
 if __name__ == "__main__":
     main()
+
+# /////////////// TERMINAL GAME REMAINDER /////////////// *
+
+# # ask for player's name
+# player_name = input('Enter your name: ')
+# # create player and computer
+# player = Player(player_name)
+# computer = Player("computer")
+# players = [player, computer]
+# # create deck
+# deck = Deck(players)
+# # start  round
+# round =Round(player.hand, computer.hand, deck)
+# round.show_player_hand()
+# # ask player for cards to change
+# round.ask_cards_change()
+# # show computer hand
+# print('Computer hand is:')
+# round.show_computer_hand()
