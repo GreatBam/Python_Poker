@@ -18,11 +18,9 @@ def main():
     deck = Deck(players)
     round =Round(player.hand, computer.hand, deck)
     round.show_player_hand()
-    round.cards_change()
-
-    # tests
-    for card in player.hand:
-        print(card.suit, card.rank, card.img_path)
+    round.ask_cards_change()
+    
+    print('Computer hand is:')
     
 if __name__ == "__main__":
     main()
