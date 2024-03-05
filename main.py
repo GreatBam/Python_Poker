@@ -14,7 +14,7 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((1280, 720))
     clock = pygame.time.Clock()
-    fps = 30
+    fps = 60
     running = True
     
     # game setup
@@ -51,7 +51,7 @@ def main():
             card.event_handler(event)
             
         for card in computer.hand:
-            card.draw_back()    
+            card.draw_back()
 
         # display
         pygame.display.flip()
