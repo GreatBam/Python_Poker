@@ -13,3 +13,6 @@ class Card:
         
     def draw(self, screen:object, x:int, y:int):
         screen.blit(self.img_path, (x, y))
+        
+    def draw_back(self, screen:object, x:int, y:int):
+        screen.blit(self.back_img_path, (x, y))

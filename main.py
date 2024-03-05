@@ -41,14 +41,14 @@ def main():
         screen.fill("green")
         
         # RENDER YOUR GAME HERE
-        x = 100
+        xPos = 100
         for card in player.hand:
-            card.draw(screen, x, 500)
-            x += 100
+            card.draw(screen, xPos, 500)
+            xPos += 100
             
         for card in computer.hand:
-            screen.blit(card.back_img_path, (x, 100))
-            x += 100
+            card.draw_back(screen, xPos, 100)
+            xPos += 100
 
         # flip() the display to put your work on screen
         pygame.display.flip()
