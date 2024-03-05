@@ -15,8 +15,10 @@ def main():
     player = Player(player_name)
     computer = Player("computer")
     players = [player, computer]
-    Deck(players)
-    Round(player.hand, computer.hand)
+    deck = Deck(players)
+    round =Round(player.hand, computer.hand, deck)
+    round.show_player_hand()
+    round.cards_change()
 
     # tests
     for card in player.hand:
