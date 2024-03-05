@@ -3,10 +3,17 @@
 # 2024-03-05
 
 # Importing libraries
+import pygame
 from classes.deck import Deck
 from classes.player import Player
 from classes.round import Round
 from classes.score import Score
+
+# pygame setup
+pygame.init()
+screen = pygame.display.set_mode((1280, 720))
+clock = pygame.time.Clock()
+running = True
 
 def main():
     # ask for player's name
