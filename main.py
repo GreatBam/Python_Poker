@@ -16,10 +16,10 @@ def main():
     player = Player("player_name")
     computer = Player("computer")
     players = [player, computer]
-    deck = Deck(players)
+    Deck(players)
     #test
-    for card in deck.cards:
-        print(card.suit, card.rank, card.img_path)
+    # for card in deck.cards:
+    #     print(card.suit, card.rank, card.img_path)
     # /////////////////////////////////////////
     
     # pygame setup
@@ -43,7 +43,7 @@ def main():
         # RENDER YOUR GAME HERE
         x = 100
         for card in player.hand:
-            screen.blit(card.img_path, (x, 550))
+            card.draw(screen, x, 500)
             x += 100
             
         for card in computer.hand:

@@ -10,3 +10,6 @@ class Card:
         self.rank = rank
         self.img_path = img_path
         self.back_img_path = pygame.image.load('images/back.png')
+        
+    def draw(self, screen:object, x:int, y:int):
+        screen.blit(self.img_path, (x, y))
