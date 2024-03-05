@@ -5,8 +5,9 @@ class Round:
         self.player_hand = player_hand
         self.computer_hand = computer_hand
         self.deck = deck
-        self.list_of_ints = []
+        self.correct_input = False
         self.check = False
+        self.cards_to_change_list = []
         
     def show_player_hand(self):
         hand = ''
@@ -15,20 +16,28 @@ class Round:
         print(hand)
         
     def ask_cards_change(self):
-        correct_input = False
-        while correct_input == False and self.check == False:
+        while self.correct_input == False and self.check == False:
             changes_str = input('\nWhich cards would you like to change [1-5]? (up to 3 card):\nPress enter to skip\n')
             test_str = re.search('[a-zA-Z]', changes_str)
             if test_str == None:
-                correct_input = True
+                self.correct_input = True
             else:
                 print('Please enter a valid input')
-            self.list_of_ints = [int(x) for x in changes_str]
-            if(len(self.list_of_ints) <= 3):
+            self.cards_to_change_list = [int(x) for x in changes_str]
+            if(len(self.cards_to_change_list) <= 3):
                 self.check = True
             else:
                 print('You can only change up to 3 cards')
         self.cards_change()
 
-                
+    def cards_change(self):
+        for i in range(len(self.cards_to_change_list)):
+            self.cards_to_change_list[i] = int(self.cards_to_change_list[i]) - 1
+        position = 0
+        for card in self.cards_to_change_list:
+            self.player_hand.pop(int(card) - position)
+            self.player_hand.append(self.deck.cards[0])
+            self.deck.cards.pop(0)
+            position += 1
+        self.show_player_hand()                
                 
