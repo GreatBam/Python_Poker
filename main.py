@@ -25,6 +25,15 @@ def main():
     Deck(screen, players)
     player_selection = []
     
+    # card change button
+    color = (255,255,255) 
+    color_light = (170,170,170) 
+    color_dark = (100,100,100)
+    width = screen.get_width()
+    height = screen.get_height()
+    smallfont = pygame.font.SysFont('Tahoma',35) 
+    text = smallfont.render('Change' , True , color) 
+    
     # position cards
     xPos = 100
     # player cards
@@ -46,13 +55,17 @@ def main():
         # screen background color
         screen.fill("green")
         
-        # game rendering
+        # RENDER GAME
         for card in player.hand:
             card.draw()
             card.event_handler(event, player_selection)
             
         for card in computer.hand:
             card.draw_back()
+            
+        # card change button
+        pygame.draw.rect(screen,color_dark,[(width/2)+50,((height/2)+(height/4)),140,40]) 
+        screen.blit(text , ((width/2)+61,((height/2)+(height/4))-5)) 
 
         # display
         pygame.display.flip()
