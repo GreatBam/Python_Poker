@@ -23,12 +23,13 @@ class Button:
         self.button = pygame.draw.rect(self.screen, self.dark_color, [self.button_position[0], self.button_position[1], 140, 40], 0, 10)
         self.screen.blit(self.text, self.text_position)
         
-    def card_change(self):
-        for card in self.player_hand:
-            if card.selected:
-                card.selected = False
-                self.player_hand.remove(card)
-                self.player_hand.append(self.deck.cards.pop(0))
+    def card_change(self, player_selection:list):
+        for selected_card in player_selection:
+            for player_card in self.player_hand:
+                if player_card == selected_card:
+                    player_card.selected = False
+                    self.player_hand.remove(selected_card)
+                    self.player_hand.append(self.deck.cards.pop(0))
         self.deck.display()
     
     def event_handler(self, event, player_selection:list):
@@ -36,6 +37,6 @@ class Button:
             if event.button == 1:
                 if self.button.collidepoint(event.pos):
                     print('Button clicked')
-                    self.card_change()
+                    self.card_change(player_selection)
                     player_selection.clear()
                     pygame.time.delay(50)
