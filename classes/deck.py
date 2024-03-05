@@ -24,7 +24,7 @@ class Deck:
                 # rank_path = (re.findall(r'\b\w', rank)[0]).lower()
                 rank_path = rank.lower()
                 image = pygame.image.load(f'images/{suit_path}{rank_path}.png')
-                cards.append(Card(suit, rank, image))
+                cards.append(Card(suit, rank, image, 0, 0))
         return cards
     
     def deal(self, players):

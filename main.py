@@ -17,6 +17,18 @@ def main():
     computer = Player("computer")
     players = [player, computer]
     Deck(players)
+    
+    # position cards
+    xPos = 100
+    # player cards
+    for card in player.hand:
+        card.position = (xPos, 500)
+        xPos += 100
+    # computer cards
+    for card in computer.hand:
+        card.position = (xPos, 100)
+        xPos += 100
+        
     #test
     # for card in deck.cards:
     #     print(card.suit, card.rank, card.img_path)
@@ -41,14 +53,12 @@ def main():
         screen.fill("green")
         
         # RENDER YOUR GAME HERE
-        xPos = 100
         for card in player.hand:
-            card.draw(screen, xPos, 500)
-            xPos += 100
+            card.draw(screen)
+            card.event_handler(event, screen)
             
         for card in computer.hand:
-            card.draw_back(screen, xPos, 100)
-            xPos += 100
+            card.draw_back(screen)            
 
         # flip() the display to put your work on screen
         pygame.display.flip()
