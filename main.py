@@ -11,5 +11,13 @@ from classes.score import Score
 
 deck = Deck()
 
+player_name = input('Enter your name: ')
+player = Player(player_name, [])
+computer = Player("computer", [])
+players = [player, computer]
+
+
+
+# tests
 for card in deck.cards:
     print(card.suit, card.rank, card.img_path)
