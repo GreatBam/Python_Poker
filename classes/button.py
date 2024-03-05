@@ -28,8 +28,7 @@ class Button:
             if card.selected:
                 card.selected = False
                 self.player_hand.remove(card)
-                self.player_hand.append(self.deck.cards[0])
-                self.deck.cards.pop(0)
+                self.player_hand.append(self.deck.cards.pop(0))
         self.deck.display()
     
     def event_handler(self, event, player_selection:list):

@@ -11,7 +11,7 @@ class Deck:
         self.players = players
         self.cards = self.create_deck()
         self.shuffle()
-        self.deal(self.players)
+        self.deal()
         
     def shuffle(self):
         random.shuffle(self.cards)
@@ -28,9 +28,9 @@ class Deck:
                 cards.append(Card(suit, rank, image, self.screen, 0, 0))
         return cards
     
-    def deal(self, players):
+    def deal(self):
         for _ in range(5):
-            for player in players:
+            for player in self.players:
                 player.hand.append(self.cards.pop(0))
                 
     def display(self):
