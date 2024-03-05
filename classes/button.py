@@ -36,7 +36,6 @@ class Button:
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 if self.button.collidepoint(event.pos):
-                    print('Button clicked')
                     self.card_change(player_selection)
                     player_selection.clear()
                     pygame.time.delay(50)

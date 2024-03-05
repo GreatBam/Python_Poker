@@ -24,8 +24,6 @@ class Card:
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 if self.image.collidepoint(event.pos):
-                    # debug
-                    print(f'{self.rank} of {self.suit} clicked (pos : {self.position})')
                     if(self.position[1] == 500):
                         if(len(player_selection) < 3):
                             self.position = (self.position[0], self.position[1] - 20)
