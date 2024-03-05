@@ -6,8 +6,8 @@
 import random, re
 from classes.deck import Deck
 from classes.player import Player
+from classes.round import Round
 from classes.score import Score
-# from classes.card import Card
 
 def main():
 
@@ -16,6 +16,7 @@ def main():
     computer = Player("computer")
     players = [player, computer]
     Deck(players)
+    Round(player.hand, computer.hand)
 
     # tests
     for card in player.hand:
