@@ -12,8 +12,8 @@ from classes.score import Score
 def main():
 
     player_name = input('Enter your name: ')
-    player = Player(player_name, [])
-    computer = Player("computer", [])
+    player = Player(player_name)
+    computer = Player("computer")
     players = [player, computer]
     Deck(players)
 

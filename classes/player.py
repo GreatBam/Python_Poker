@@ -1,4 +1,4 @@
 class Player:
-    def __init__(self, name:str, hand:list):
+    def __init__(self, name:str):
         self.name = name
-        self.hand = hand
+        self.hand = []
