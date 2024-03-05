@@ -6,6 +6,7 @@
 import pygame
 from classes.deck import Deck
 from classes.player import Player
+from classes.button import Button
 from classes.round import Round
 from classes.score import Score
 
@@ -22,19 +23,13 @@ def main():
     player = Player("player_name")
     computer = Player("computer")
     players = [player, computer]
-    Deck(screen, players)
+    deck = Deck(screen, players)
     player_selection = []
     
     # card change button
-    color = (255,255,255) 
-    color_light = (170,170,170) 
-    color_dark = (100,100,100)
-    width = screen.get_width()
-    height = screen.get_height()
-    smallfont = pygame.font.SysFont('Tahoma',35) 
-    text = smallfont.render('Change' , True , color) 
+    button = Button(player.hand, deck, screen)
     
-    # position cards
+    # prepare cards positions
     xPos = 100
     # player cards
     for card in player.hand:
@@ -64,8 +59,7 @@ def main():
             card.draw_back()
             
         # card change button
-        pygame.draw.rect(screen,color_dark,[(width/2)+50,((height/2)+(height/4)),140,40]) 
-        screen.blit(text , ((width/2)+61,((height/2)+(height/4))-5)) 
+        button.draw()
 
         # display
         pygame.display.flip()

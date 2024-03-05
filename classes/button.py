@@ -18,3 +18,7 @@ class Button:
         self.text = self.font.render("Change", True, self.text_color)
         self.button_position = (self.width/2)+50,((self.height/2)+(self.height/4))
         self.text_position = ((self.width/2)+61,((self.height/2)+(self.height/4))-5)
+        
+    def draw(self):
+        pygame.draw.rect(self.screen, self.dark_color, [self.button_position[0], self.button_position[1], 140, 40], 0, 10)
+        self.screen.blit(self.text, self.text_position)
