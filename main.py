@@ -38,9 +38,13 @@ def main():
                 running = False
 
         # fill the screen with a color to wipe away anything from last frame
-        screen.fill("white")
-
+        screen.fill("green")
+        
         # RENDER YOUR GAME HERE
+        x = 100
+        for card in player.hand:
+            screen.blit(card.img_path, (x, 550))
+            x += 100
 
         # flip() the display to put your work on screen
         pygame.display.flip()
