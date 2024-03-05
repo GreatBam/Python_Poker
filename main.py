@@ -14,7 +14,7 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((1280, 720))
     clock = pygame.time.Clock()
-    fps = 60
+    fps = 30
     running = True
     
     # game setup
@@ -23,6 +23,7 @@ def main():
     computer = Player("computer")
     players = [player, computer]
     Deck(screen, players)
+    player_selection = []
     
     # position cards
     xPos = 100
@@ -48,7 +49,7 @@ def main():
         # game rendering
         for card in player.hand:
             card.draw()
-            card.event_handler(event)
+            card.event_handler(event, player_selection)
             
         for card in computer.hand:
             card.draw_back()

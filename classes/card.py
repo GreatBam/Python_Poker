@@ -19,14 +19,17 @@ class Card:
     def draw_back(self):
         self.back_image = self.screen.blit(self.back_img_path, self.position)
         
-    def event_handler(self, event):
+    def event_handler(self, event, player_selection:list):
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 if self.image.collidepoint(event.pos):
                     # debug
                     # print(f'{self.rank} of {self.suit} clicked')
                     if(self.position[1] == 500):
-                        self.position = (self.position[0], self.position[1] - 20)
+                        if(len(player_selection) < 3):
+                            self.position = (self.position[0], self.position[1] - 20)
+                            player_selection.append(self)
                     elif(self.position[1] == 480):
                         self.position = (self.position[0], self.position[1] + 20)
-                    pygame.time.delay(100)
+                        player_selection.remove(self)
+                pygame.time.delay(50)
