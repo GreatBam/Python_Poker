@@ -21,6 +21,7 @@ def main():
     round.ask_cards_change()
     
     print('Computer hand is:')
+    round.show_computer_hand()
     
 if __name__ == "__main__":
     main()

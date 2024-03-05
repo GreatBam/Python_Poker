@@ -15,6 +15,12 @@ class Round:
             hand += f'{card.suit} {card.rank} | '
         print(hand)
         
+    def show_computer_hand(self):
+        hand = ''
+        for card in self.computer_hand:
+            hand += f'{card.suit} {card.rank} | '
+        print(hand)
+        
     def ask_cards_change(self):
         while self.correct_input == False and self.check == False:
             changes_str = input('\nWhich cards would you like to change [1-5]? (up to 3 card):\nPress enter to skip\n')
