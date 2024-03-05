@@ -20,25 +20,17 @@ def main():
     
     # game setup
     # player_name = input('Enter your name: ') # under construction
-    player = Player("player_name")
+    player = Player("player")
     computer = Player("computer")
     players = [player, computer]
     deck = Deck(screen, players)
     player_selection = []
     
+    # set card positions
+    deck.display()
+    
     # card change button
     button = Button(player.hand, deck, screen)
-    
-    # prepare cards positions
-    xPos = 100
-    # player cards
-    for card in player.hand:
-        card.position = (xPos, 500)
-        xPos += 100
-    # computer cards
-    for card in computer.hand:
-        card.position = (xPos, 100)
-        xPos += 100
     
     # game loop
     while running:
@@ -64,11 +56,12 @@ def main():
         # display
         pygame.display.flip()
 
-        clock.tick(fps)  # FPS limit
+        # fps
+        clock.tick(fps)
 
     pygame.quit()
     
-    
+# run the game
 if __name__ == "__main__":
     main()
 

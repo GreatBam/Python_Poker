@@ -8,9 +8,10 @@ from classes.card import Card
 class Deck:
     def __init__(self, screen:object, players:list):
         self.screen = screen
+        self.players = players
         self.cards = self.create_deck()
         self.shuffle()
-        self.deal(players)
+        self.deal(self.players)
         
     def shuffle(self):
         random.shuffle(self.cards)
@@ -31,3 +32,14 @@ class Deck:
         for _ in range(5):
             for player in players:
                 player.hand.append(self.cards.pop(0))
+                
+    def display(self):
+        xPos = 100
+        for player in self.players:
+            if(player.name == 'player'):
+                yPos = 500
+            else:
+                yPos = 100
+            for card in player.hand:
+                card.position = (xPos, yPos)
+                xPos += 100
