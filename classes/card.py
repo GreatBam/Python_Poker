@@ -12,6 +12,7 @@ class Card:
         self.screen = screen
         self.position = (x, y)
         self.back_img_path = pygame.image.load('images/back.png')
+        self.selected = False
         
     def draw(self):
         self.image = self.screen.blit(self.img_path, self.position)
@@ -29,7 +30,9 @@ class Card:
                         if(len(player_selection) < 3):
                             self.position = (self.position[0], self.position[1] - 20)
                             player_selection.append(self)
+                            self.selected = True
                     elif(self.position[1] == 480):
                         self.position = (self.position[0], self.position[1] + 20)
                         player_selection.remove(self)
+                        self.selected = False
                 pygame.time.delay(50)
