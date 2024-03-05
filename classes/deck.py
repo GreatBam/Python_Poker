@@ -22,7 +22,6 @@ class Deck:
         for suit in suits_list:
             for rank in ranks_list:
                 suit_path = (re.findall(r'\b\w', suit)[0]).lower()
-                # rank_path = (re.findall(r'\b\w', rank)[0]).lower()
                 rank_path = rank.lower()
                 image = pygame.image.load(f'images/{suit_path}{rank_path}.png')
                 cards.append(Card(suit, rank, image, self.screen, 0, 0))
