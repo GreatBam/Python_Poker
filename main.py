@@ -17,6 +17,9 @@ def main():
     computer = Player("computer")
     players = [player, computer]
     deck = Deck(players)
+    #test
+    for card in deck.cards:
+        print(card.suit, card.rank, card.img_path)
     # /////////////////////////////////////////
     
     # pygame setup

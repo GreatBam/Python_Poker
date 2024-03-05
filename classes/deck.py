@@ -2,7 +2,7 @@
 # Jonathan Gabioud
 # 2024-03-05
 
-import random, re
+import random, re, pygame
 from classes.card import Card
 
 class Deck:
@@ -21,8 +21,10 @@ class Deck:
         for suit in suits_list:
             for rank in ranks_list:
                 suit_path = (re.findall(r'\b\w', suit)[0]).lower()
-                rank_path = (re.findall(r'\b\w', rank)[0]).lower()
-                cards.append(Card(suit, rank, f'images/{rank_path}{suit_path}.png'))
+                # rank_path = (re.findall(r'\b\w', rank)[0]).lower()
+                rank_path = rank.lower()
+                image = pygame.image.load(f'images/{suit_path}{rank_path}.png')
+                cards.append(Card(suit, rank, image))
         return cards
     
     def deal(self, players):
