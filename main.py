@@ -9,14 +9,16 @@ from classes.player import Player
 from classes.score import Score
 # from classes.card import Card
 
-deck = Deck()
+def main():
+    deck = Deck()
 
-player_name = input('Enter your name: ')
-player = Player(player_name, [])
-computer = Player("computer", [])
-players = [player, computer]
+    player_name = input('Enter your name: ')
+    player = Player(player_name, [])
+    computer = Player("computer", [])
+    players = [player, computer]
 
-
+if __name__ == "__main__":
+    main()
 
 # tests
 for card in deck.cards:
