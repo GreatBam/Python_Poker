@@ -31,3 +31,12 @@ class Button:
                 self.player_hand.append(self.deck.cards[0])
                 self.deck.cards.pop(0)
         self.deck.display()
+    
+    def event_handler(self, event, player_selection:list):
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if event.button == 1:
+                if self.button.collidepoint(event.pos):
+                    print('Button clicked')
+                    self.card_change()
+                    player_selection.clear()
+                    pygame.time.delay(50)

@@ -50,6 +50,7 @@ def main():
             
         # card change button
         button.draw()
+        button.event_handler(event, player_selection)
 
         # display
         pygame.display.flip()
