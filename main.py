@@ -45,6 +45,10 @@ def main():
         for card in player.hand:
             screen.blit(card.img_path, (x, 550))
             x += 100
+            
+        for card in computer.hand:
+            screen.blit(card.back_img_path, (x, 100))
+            x += 100
 
         # flip() the display to put your work on screen
         pygame.display.flip()
