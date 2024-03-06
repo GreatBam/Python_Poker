@@ -59,3 +59,9 @@ class Score:
             if ranks.count(rank) == 2:
                 pairs += 1
         return True if pairs == 2 else False
+    
+    def pair(self, ranks:list):
+        for rank in ranks:
+            if ranks.count(rank) == 2:
+                return True
+        return False
