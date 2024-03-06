@@ -32,4 +32,10 @@ class Score:
     def straight_flush(self, suits:list, ranks:list):
         return self.flush(suits) and self.straight(ranks)
     
+    def four_of_a_kind(self, ranks:list):
+        for rank in ranks:
+            if ranks.count(rank) == 4:
+                return True
+        return False
+    
     
