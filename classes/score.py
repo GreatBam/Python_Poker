@@ -30,7 +30,7 @@ class Score:
             return "high card"
 
     def straight_flush(self, suits:list, ranks:list):
-        return self.flush(suits) and self.straight(ranks)
+        return True if self.flush(suits) and self.straight(ranks) else False
     
     def four_of_a_kind(self, ranks:list):
         for rank in ranks:
@@ -39,13 +39,13 @@ class Score:
         return False
     
     def full_house(self, ranks:list):
-        return self.three_of_a_kind(ranks) and self.pair(ranks)
+        return True if self.three_of_a_kind(ranks) and self.pair(ranks) else False
     
     def flush(self, suits:list):
-        return len(set(suits)) == 1
+        return True if len(set(suits)) == 1 else False
     
     def straight(self, ranks:list):
-        return (max(ranks) - min(ranks)) == 4 and len(set(ranks)) == 5
+        return True if (max(ranks) - min(ranks)) == 4 and len(set(ranks)) == 5 else False
     
     def three_of_a_kind(self, ranks:list):
         for rank in ranks:
