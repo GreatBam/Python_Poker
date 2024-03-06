@@ -30,7 +30,7 @@ def main():
     deck.display()
     
     # card change button
-    change_button = Button(player.hand, deck, screen)
+    change_button = Button(screen, width, height)
     
     # game loop
     while running:
@@ -52,7 +52,7 @@ def main():
             
         # card change button
         change_button.draw()
-        change_button.event_handler(event, player_selection)
+        change_button.event_handler(event, player_selection, player.hand, deck)
 
         # display
         pygame.display.flip()
