@@ -13,6 +13,8 @@ def main():
     # pygame setup
     pygame.init()
     screen = pygame.display.set_mode((1280, 720))
+    width = screen.get_width()
+    height = screen.get_height()
     clock = pygame.time.Clock()
     fps = 30
     running = True
