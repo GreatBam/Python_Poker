@@ -44,4 +44,7 @@ class Score:
     def flush(self, suits:list):
         return len(set(suits)) == 1
     
+    def straight(self, ranks:list):
+        return (max(ranks) - min(ranks)) == 4 and len(set(ranks)) == 5
+    
     
