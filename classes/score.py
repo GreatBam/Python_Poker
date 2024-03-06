@@ -39,13 +39,13 @@ class Score:
         return False
     
     def full_house(self, ranks:list):
-        return True if self.three_of_a_kind(ranks) and self.pair(ranks) else False
+        pass
     
     def flush(self, suits:list):
         return True if len(set(suits)) == 1 else False
     
     def straight(self, ranks:list):
-        return True if (max(ranks) - min(ranks)) == 4 and len(set(ranks)) == 5 else False
+        return False
     
     def three_of_a_kind(self, ranks:list):
         for rank in ranks:
@@ -56,13 +56,13 @@ class Score:
     def two_pair(self, ranks:list):
         pairs = 0
         for rank in ranks:
-            if ranks.count(rank) == 2:
+            if ranks.count(rank) == 1:
                 pairs += 1
-        return True if pairs == 2 else False
+        return True if pairs >= 3 else False
     
     def pair(self, ranks:list):
         for rank in ranks:
-            if ranks.count(rank) == 2:
+            if ranks.count(rank) == 1:
                 return True
         return False
     

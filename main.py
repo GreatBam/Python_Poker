@@ -55,7 +55,7 @@ def main():
         change_button.draw()
         change_button.change_button_event_handler(event, player_selection, player.hand, deck)
         play_button.draw()
-        play_button.play_button_event_handler(event)
+        play_button.play_button_event_handler(event, player.hand, computer.hand)
 
         # display
         pygame.display.flip()

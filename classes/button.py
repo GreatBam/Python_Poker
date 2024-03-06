@@ -3,6 +3,7 @@
 # 2024-03-05
 
 import pygame
+from classes.score import Score
 
 class Button:
     def __init__(self, screen:object, width:int, height:int, type:str):
@@ -52,8 +53,9 @@ class Button:
                     player_selection.clear()
                     pygame.time.delay(50)
                     
-    def play_button_event_handler(self, event):
+    def play_button_event_handler(self, event, player_hand:list, computer_hand:list):
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 if self.button.collidepoint(event.pos):
-                    pass
+                    score = Score(player_hand, computer_hand)
+                    print(score.check_poker_hand(player_hand))
