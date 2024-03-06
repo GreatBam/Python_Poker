@@ -31,6 +31,7 @@ def main():
     
     # card change button
     change_button = Button(screen, width, height)
+    change_button.prepare_change_button()
     
     # game loop
     while running:
