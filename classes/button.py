@@ -14,6 +14,12 @@ class Button:
         self.text_color = (255, 255, 255)
         self.light_color = (170, 170, 170)
         self.dark_color = (100, 100, 100)
+        if(self.type == "Change"):
+            self.prepare_change_button()
+            self.button_color = (100, 100, 100)
+        elif(self.type == "Play"):
+            self.prepare_play_button()
+            self.button_color = (0, 255, 0)
         
     def prepare_change_button(self):
         self.button_position = (self.width/2)+50,((self.height/2)+(self.height/4))
