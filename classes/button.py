@@ -19,7 +19,7 @@ class Button:
             self.button_color = (100, 100, 100)
         elif(self.type == "Play"):
             self.prepare_play_button()
-            self.button_color = (0, 255, 0)
+            self.button_color = (0, 0, 255)
         
     def prepare_change_button(self):
         self.button_position = (self.width/2)+50,((self.height/2)+(self.height/4))
@@ -28,7 +28,7 @@ class Button:
         
     def prepare_play_button(self):
         self.button_position = (self.width/2)+250,((self.height/2)+(self.height/4))
-        self.text_position = ((self.width/2)+261,((self.height/2)+(self.height/4))-5)
+        self.text_position = ((self.width/2)+290,((self.height/2)+(self.height/4))-5)
         self.text = self.font.render("Play", True, self.text_color)
         
     def draw(self):
@@ -44,10 +44,16 @@ class Button:
                     player_hand.append(deck.cards.pop(0))
         deck.display()
     
-    def event_handler(self, event, player_selection:list, player_hand:list, deck:list):
+    def change_button_event_handler(self, event, player_selection:list, player_hand:list, deck:list):
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 if self.button.collidepoint(event.pos):
                     self.card_change(player_selection, player_hand, deck)
                     player_selection.clear()
                     pygame.time.delay(50)
+                    
+    def play_button_event_handler(self, event):
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if event.button == 1:
+                if self.button.collidepoint(event.pos):
+                    pass
