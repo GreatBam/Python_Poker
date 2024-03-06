@@ -65,3 +65,7 @@ class Score:
             if ranks.count(rank) == 2:
                 return True
         return False
+    
+    def compare_hands(self):
+        player_final_hand = self.check_poker_hand(self.player_hand)
+        computer_final_hand = self.check_poker_hand(self.computer_hand)
