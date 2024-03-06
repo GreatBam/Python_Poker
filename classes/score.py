@@ -28,3 +28,8 @@ class Score:
             return "pair"
         else:
             return "high card"
+
+    def straight_flush(self, suits:list, ranks:list):
+        return self.flush(suits) and self.straight(ranks)
+    
+    
