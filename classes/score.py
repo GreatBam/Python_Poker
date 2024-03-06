@@ -41,4 +41,7 @@ class Score:
     def full_house(self, ranks:list):
         return self.three_of_a_kind(ranks) and self.pair(ranks)
     
+    def flush(self, suits:list):
+        return len(set(suits)) == 1
+    
     
