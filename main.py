@@ -29,9 +29,9 @@ def main():
     # set card positions
     deck.display()
     
-    # card change button
-    change_button = Button(screen, width, height)
-    change_button.prepare_change_button()
+    # buttons
+    change_button = Button(screen, width, height, "Change")
+    play_button = Button(screen, width, height, "Play")
     
     # game loop
     while running:
