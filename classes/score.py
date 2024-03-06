@@ -47,4 +47,10 @@ class Score:
     def straight(self, ranks:list):
         return (max(ranks) - min(ranks)) == 4 and len(set(ranks)) == 5
     
+    def three_of_a_kind(self, ranks:list):
+        for rank in ranks:
+            if ranks.count(rank) == 3:
+                return True
+        return False
+    
     
