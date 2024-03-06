@@ -38,4 +38,7 @@ class Score:
                 return True
         return False
     
+    def full_house(self, ranks:list):
+        return self.three_of_a_kind(ranks) and self.pair(ranks)
+    
     
