@@ -81,7 +81,8 @@ def main():
         # RENDER GAME
         for card in player.hand:
             card.draw()
-            card.event_handler(event, player_selection)
+            card.event_handler(event,
+                               player_selection)
             
         for card in computer.hand:
             if computer.show_cards:
@@ -95,9 +96,18 @@ def main():
         reset_button.draw()
 
         # event listeners
-        change_button.change_button_event_handler(event, player_selection, player.hand, change)
-        play_button.play_button_event_handler(event, player, computer)
-        reset_button.reset_button_event_handler(event, players, deck, pile, display)
+        change_button.change_button_event_handler(event,
+                                                  player_selection,
+                                                  player.hand,
+                                                  change)
+        play_button.play_button_event_handler(event,
+                                              player,
+                                              computer)
+        reset_button.reset_button_event_handler(event,
+                                                players,
+                                                deck,
+                                                pile,
+                                                display)
 
         # display
         pygame.display.flip()
