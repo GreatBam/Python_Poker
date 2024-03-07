@@ -19,13 +19,19 @@ def main():
     fps = 60
     running = True
     
-    # game setup
+    # players creation
     player = Player("player", True)
     computer = Player("computer", False)
     players = [player, computer]
+    
+    # deck creation
     deck = Deck(screen, players)
+    
+    # pile creation and cards dealing
     pile = Pile(deck, players)
     pile.deal()
+    
+    # player card change selection
     player_selection = []
     
     # buttons
