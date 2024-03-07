@@ -27,14 +27,3 @@ class Deck:
                 image = pygame.image.load(f'images/{suit_path}{rank_path}.png')
                 cards.append(Card(suit, rank, image, self.screen, 0, 0))
         return cards
-                
-    def display(self):
-        xPos = 100
-        for player in self.players:
-            if(player.name == 'player'):
-                yPos = 500
-            else:
-                yPos = 100
-            for card in player.hand:
-                card.position = (xPos, yPos)
-                xPos += 100
