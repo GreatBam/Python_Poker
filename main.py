@@ -88,13 +88,15 @@ def main():
                 card.draw()
             else:
                 card.draw_back()
-            
-        # buttons
+
+        # draw buttons
         change_button.draw()
-        change_button.change_button_event_handler(event, player_selection, player.hand, change)
         play_button.draw()
-        play_button.play_button_event_handler(event, player, computer)
         reset_button.draw()
+
+        # event listeners
+        change_button.change_button_event_handler(event, player_selection, player.hand, change)
+        play_button.play_button_event_handler(event, player, computer)
         reset_button.reset_button_event_handler(event, players, deck, pile, display)
 
         # display
