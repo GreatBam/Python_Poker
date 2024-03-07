@@ -9,3 +9,4 @@ class Player:
         self.show_cards = show_cards
         if(name == 'player'):
             self.play_state = False
+            self.changes = 3

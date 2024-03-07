@@ -98,7 +98,7 @@ def main():
         # event listeners
         change_button.change_button_event_handler(event,
                                                   player_selection,
-                                                  player.hand,
+                                                  player,
                                                   change)
         play_button.play_button_event_handler(event,
                                               player,

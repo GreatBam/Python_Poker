@@ -22,13 +22,15 @@ class Button:
         self.button = pygame.draw.rect(self.screen, self.button_color, [self.button_position[0], self.button_position[1], 140, 40], 0, 10)
         self.screen.blit(self.text, self.text_position)
     
-    def change_button_event_handler(self, event, player_selection:list, player_hand:list, change:object):
+    def change_button_event_handler(self, event, player_selection:list, player:object, change:object):
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 if self.button.collidepoint(event.pos):
-                    change.card_change(player_selection, player_hand)
-                    player_selection.clear()
-                    pygame.time.delay(50)
+                    if(player.changes != 0):
+                        player.changes -= 1
+                        change.card_change(player_selection, player.hand)
+                        player_selection.clear()
+                        pygame.time.delay(50)
                     
     def play_button_event_handler(self, event, player:object, computer:object):
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -50,6 +52,7 @@ class Button:
                                 return
                             else:
                                 player.play_state = False
+                                player.changes = 3
                         if player.name == "computer":
                             player.show_cards = False
                         player.hand.clear()
