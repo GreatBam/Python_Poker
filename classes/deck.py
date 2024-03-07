@@ -28,11 +28,6 @@ class Deck:
                 image = pygame.image.load(f'images/{suit_path}{rank_path}.png')
                 cards.append(Card(suit, rank, image, self.screen, 0, 0))
         return cards
-    
-    def deal(self):
-        for _ in range(5):
-            for player in self.players:
-                player.hand.append(self.cards.pop(0))
                 
     def display(self):
         xPos = 100
