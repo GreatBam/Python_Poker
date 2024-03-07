@@ -7,7 +7,6 @@ import pygame
 from classes.deck import Deck
 from classes.player import Player
 from classes.button import Button
-from classes.score import Score
 
 def main():
     # pygame setup
