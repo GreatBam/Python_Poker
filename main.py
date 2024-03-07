@@ -65,7 +65,7 @@ def main():
                           height,
                           "Reset",
                           ((width/2)+150,height/2),
-                          ((width/2)+190,((height/2)-5)),
+                          ((width/2)+178,((height/2)-5)),
                           (255, 0, 0))
     
     # game loop
