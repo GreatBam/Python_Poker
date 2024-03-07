@@ -27,19 +27,19 @@ def main():
     
     # buttons
     change_button = Button(screen,
-                            width,
-                            height,
-                            "Change",
-                            ((width/2)+50,((height/2)+(height/4))),
-                            ((width/2)+61,((height/2)+(height/4))-5),
-                            (100, 100, 100))
+                           width,
+                           height,
+                           "Change",
+                           ((width/2)+50,((height/2)+(height/4))),
+                           ((width/2)+61,((height/2)+(height/4))-5),
+                           (100, 100, 100))
     play_button = Button(screen,
-                            width,
-                            height,
-                            "Play",
-                            ((width/2)+250,((height/2)+(height/4))),
-                            ((width/2)+290,((height/2)+(height/4))-5),
-                            (0, 0, 255))
+                         width,
+                         height,
+                         "Play",
+                         ((width/2)+250,((height/2)+(height/4))),
+                         ((width/2)+290,((height/2)+(height/4))-5),
+                         (0, 0, 255))
     reset_button = Button(screen,
                           width,
                           height,
