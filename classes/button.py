@@ -6,19 +6,22 @@ import pygame
 from classes.score import Score
 
 class Button:
-    def __init__(self, screen:object, width:int, height:int, type:str):
+    def __init__(self, screen:object, width:int, height:int, label:str, button_pos:tuple, text_pos:tuple, color:tuple): 
         self.screen = screen
         self.width = width
         self.height = height
-        self.type = type
+        self.label = label
+        self.button_position = button_pos
+        self.text_position = text_pos
+        self.button_color = color
         self.font = pygame.font.SysFont("Tahoma", 35)
         self.text_color = (255, 255, 255)
         self.light_color = (170, 170, 170)
         self.dark_color = (100, 100, 100)
-        if(self.type == "Change"):
+        if(self.label == "Change"):
             self.prepare_change_button()
             self.button_color = (100, 100, 100)
-        elif(self.type == "Play"):
+        elif(self.label == "Play"):
             self.prepare_play_button()
             self.button_color = (0, 0, 255)
         
