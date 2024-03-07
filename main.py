@@ -30,22 +30,22 @@ def main():
                            width,
                            height,
                            "Change",
-                           ((width/2)+50,height/2),
-                           ((width/2)+61,((height/2)-5)),
+                           ((width/2)-250,height/2),
+                           ((width/2)-239,((height/2)-5)),
                            (100, 100, 100))
     play_button = Button(screen,
                          width,
                          height,
                          "Play",
-                         ((width/2)+250,height/2),
-                         ((width/2)+290,((height/2)-5)),
+                         ((width/2)-50,height/2),
+                         ((width/2)-10,((height/2)-5)),
                          (0, 0, 255))
     reset_button = Button(screen,
                           width,
                           height,
                           "Reset",
-                          ((width/2)+450,height/2),
-                          ((width/2)+490,((height/2)-5)),
+                          ((width/2)+150,height/2),
+                          ((width/2)+190,((height/2)-5)),
                           (255, 0, 0))
     
     # game loop
