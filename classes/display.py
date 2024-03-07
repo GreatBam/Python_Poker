@@ -2,7 +2,7 @@ class Display:
     def __init__(self, players:list):
         self.players = players
         
-    def display(self):
+    def set(self):
         xPos = 100
         for player in self.players:
             if(player.name == 'player'):

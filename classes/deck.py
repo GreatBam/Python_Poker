@@ -11,7 +11,6 @@ class Deck:
         self.players = players
         self.cards = self.create_deck()
         self.shuffle()
-        self.display()
         
     def shuffle(self):
         random.shuffle(self.cards)

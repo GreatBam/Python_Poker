@@ -8,6 +8,7 @@ from classes.deck import Deck
 from classes.player import Player
 from classes.button import Button
 from classes.pile import Pile
+from classes.display import Display
 
 def main():
     # pygame setup
@@ -30,6 +31,10 @@ def main():
     # pile creation and cards dealing
     pile = Pile(deck, players)
     pile.deal()
+
+    # display cards on board
+    display = Display(players)
+    display.set()
     
     # player card change selection
     player_selection = []
