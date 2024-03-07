@@ -3,7 +3,6 @@
 # 2024-03-05
 
 import pygame
-from classes.change import Change
 from classes.score import Score
 
 class Button:
