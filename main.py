@@ -93,6 +93,7 @@ def main():
         play_button.draw()
         play_button.play_button_event_handler(event, player, computer)
         reset_button.draw()
+        reset_button.reset_button_event_handler(event, players, deck, pile, display)
 
         # display
         pygame.display.flip()

@@ -38,3 +38,16 @@ class Button:
                     computer.show_cards = True
                     score = Score(player.hand, computer.hand)
                     print(score.check_poker_hand(player.hand))
+                    
+    def reset_button_event_handler(self, event, players:list, deck:object, pile:object, display:object):
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if event.button == 1:
+                if self.button.collidepoint(event.pos):
+                    for player in players:
+                        if player.name == "computer":
+                            player.show_cards = False
+                        player.hand.clear()
+                    deck.cards = deck.create_deck()
+                    pile.deal()
+                    display.set()
+                    pygame.time.delay(50)
