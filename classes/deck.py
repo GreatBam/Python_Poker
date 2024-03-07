@@ -10,7 +10,6 @@ class Deck:
         self.screen = screen
         self.players = players
         self.cards = []
-        self.shuffle()
         
     def shuffle(self):
         random.shuffle(self.cards)
