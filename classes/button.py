@@ -3,6 +3,7 @@
 # 2024-03-05
 
 import pygame
+from classes.change import Change
 from classes.score import Score
 
 class Button:
@@ -21,21 +22,12 @@ class Button:
     def draw(self):
         self.button = pygame.draw.rect(self.screen, self.button_color, [self.button_position[0], self.button_position[1], 140, 40], 0, 10)
         self.screen.blit(self.text, self.text_position)
-        
-    def card_change(self, player_selection:list, player_hand:list, deck:object, display:object):
-        for selected_card in player_selection:
-            for player_card in player_hand:
-                if player_card == selected_card:
-                    player_card.selected = False
-                    player_hand.remove(selected_card)
-                    player_hand.append(deck.cards.pop(0))
-        display.set()
     
-    def change_button_event_handler(self, event, player_selection:list, player_hand:list, deck:list, display:object):
+    def change_button_event_handler(self, event, player_selection:list, player_hand:list, change:object):
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 if self.button.collidepoint(event.pos):
-                    self.card_change(player_selection, player_hand, deck, display)
+                    change.card_change(player_selection, player_hand)
                     player_selection.clear()
                     pygame.time.delay(50)
                     
@@ -43,6 +35,6 @@ class Button:
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 if self.button.collidepoint(event.pos):
-                    computer.display = True
+                    computer.show_cards = True
                     score = Score(player.hand, computer.hand)
                     print(score.check_poker_hand(player.hand))

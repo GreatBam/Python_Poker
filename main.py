@@ -4,11 +4,12 @@
 
 # Importing libraries
 import pygame
-from classes.deck import Deck
 from classes.player import Player
-from classes.button import Button
+from classes.deck import Deck
 from classes.pile import Pile
 from classes.display import Display
+from classes.change import Change
+from classes.button import Button
 
 def main():
     # pygame setup
@@ -35,6 +36,9 @@ def main():
     # display cards on board
     display = Display(players)
     display.set()
+    
+    # set card changes
+    change = Change(deck, display)
     
     # player card change selection
     player_selection = []
@@ -78,14 +82,14 @@ def main():
             card.event_handler(event, player_selection)
             
         for card in computer.hand:
-            if computer.display:
+            if computer.show_cards:
                 card.draw()
             else:
                 card.draw_back()
             
         # buttons
         change_button.draw()
-        change_button.change_button_event_handler(event, player_selection, player.hand, deck, display)
+        change_button.change_button_event_handler(event, player_selection, player.hand, change)
         play_button.draw()
         play_button.play_button_event_handler(event, player, computer)
         reset_button.draw()

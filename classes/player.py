@@ -3,7 +3,7 @@
 # 2024-03-05
 
 class Player:
-    def __init__(self, name:str, display:bool):
+    def __init__(self, name:str, show_cards:bool):
         self.name = name
         self.hand = []
-        self.display = display
+        self.show_cards = show_cards
