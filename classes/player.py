@@ -7,3 +7,5 @@ class Player:
         self.name = name
         self.hand = []
         self.show_cards = show_cards
+        if(name == 'player'):
+            self.play_state = False

@@ -35,6 +35,7 @@ class Button:
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 if self.button.collidepoint(event.pos):
+                    player.play_state = True
                     computer.show_cards = True
                     score = Score(player.hand, computer.hand)
                     print(score.check_poker_hand(player.hand))
@@ -44,6 +45,11 @@ class Button:
             if event.button == 1:
                 if self.button.collidepoint(event.pos):
                     for player in players:
+                        if(player.name == "player"):
+                            if(player.play_state == False):
+                                return
+                            else:
+                                player.play_state = False
                         if player.name == "computer":
                             player.show_cards = False
                         player.hand.clear()
