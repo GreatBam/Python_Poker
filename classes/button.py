@@ -16,24 +16,7 @@ class Button:
         self.button_color = color
         self.font = pygame.font.SysFont("Tahoma", 35)
         self.text_color = (255, 255, 255)
-        self.light_color = (170, 170, 170)
-        self.dark_color = (100, 100, 100)
-        if(self.label == "Change"):
-            self.prepare_change_button()
-            self.button_color = (100, 100, 100)
-        elif(self.label == "Play"):
-            self.prepare_play_button()
-            self.button_color = (0, 0, 255)
-        
-    def prepare_change_button(self):
-        self.button_position = (self.width/2)+50,((self.height/2)+(self.height/4))
-        self.text_position = ((self.width/2)+61,((self.height/2)+(self.height/4))-5)
-        self.text = self.font.render("Change", True, self.text_color)
-        
-    def prepare_play_button(self):
-        self.button_position = (self.width/2)+250,((self.height/2)+(self.height/4))
-        self.text_position = ((self.width/2)+290,((self.height/2)+(self.height/4))-5)
-        self.text = self.font.render("Play", True, self.text_color)
+        self.text = self.font.render(self.label, True, self.text_color)
         
     def draw(self):
         self.button = pygame.draw.rect(self.screen, self.button_color, [self.button_position[0], self.button_position[1], 140, 40], 0, 10)
