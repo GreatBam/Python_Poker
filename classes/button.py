@@ -53,9 +53,10 @@ class Button:
                     player_selection.clear()
                     pygame.time.delay(50)
                     
-    def play_button_event_handler(self, event, player_hand:list, computer_hand:list):
+    def play_button_event_handler(self, event, player:object, computer:object):
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 if self.button.collidepoint(event.pos):
-                    score = Score(player_hand, computer_hand)
-                    print(score.check_poker_hand(player_hand))
+                    computer.display = True
+                    score = Score(player.hand, computer.hand)
+                    print(score.check_poker_hand(player.hand))

@@ -20,8 +20,8 @@ def main():
     running = True
     
     # game setup
-    player = Player("player")
-    computer = Player("computer")
+    player = Player("player", True)
+    computer = Player("computer", False)
     players = [player, computer]
     deck = Deck(screen, players)
     player_selection = []
@@ -49,13 +49,16 @@ def main():
             card.event_handler(event, player_selection)
             
         for card in computer.hand:
-            card.draw_back()
+            if computer.display:
+                card.draw()
+            else:
+                card.draw_back()
             
         # buttons
         change_button.draw()
         change_button.change_button_event_handler(event, player_selection, player.hand, deck)
         play_button.draw()
-        play_button.play_button_event_handler(event, player.hand, computer.hand)
+        play_button.play_button_event_handler(event, player, computer)
 
         # display
         pygame.display.flip()
