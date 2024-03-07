@@ -85,7 +85,7 @@ def main():
             
         # buttons
         change_button.draw()
-        change_button.change_button_event_handler(event, player_selection, player.hand, deck)
+        change_button.change_button_event_handler(event, player_selection, player.hand, deck, display)
         play_button.draw()
         play_button.play_button_event_handler(event, player, computer)
         reset_button.draw()
