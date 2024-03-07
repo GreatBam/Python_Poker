@@ -40,6 +40,13 @@ def main():
                             ((width/2)+250,((height/2)+(height/4))),
                             ((width/2)+290,((height/2)+(height/4))-5),
                             (0, 0, 255))
+    reset_button = Button(screen,
+                          width,
+                          height,
+                          "Reset",
+                          ((width/2)+450,((height/2)+(height/4))),
+                          ((width/2)+490,((height/2)+(height/4))-5),
+                          (255, 0, 0))
     
     # game loop
     while running:
@@ -67,6 +74,7 @@ def main():
         change_button.change_button_event_handler(event, player_selection, player.hand, deck)
         play_button.draw()
         play_button.play_button_event_handler(event, player, computer)
+        reset_button.draw()
 
         # display
         pygame.display.flip()
