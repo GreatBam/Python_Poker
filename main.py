@@ -26,9 +26,6 @@ def main():
     deck = Deck(screen, players)
     player_selection = []
     
-    # set card positions
-    deck.display()
-    
     # buttons
     change_button = Button(screen,
                             width,

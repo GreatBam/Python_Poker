@@ -12,6 +12,7 @@ class Deck:
         self.cards = self.create_deck()
         self.shuffle()
         self.deal()
+        self.display()
         
     def shuffle(self):
         random.shuffle(self.cards)
