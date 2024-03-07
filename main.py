@@ -7,6 +7,7 @@ import pygame
 from classes.deck import Deck
 from classes.player import Player
 from classes.button import Button
+from classes.pile import Pile
 
 def main():
     # pygame setup
@@ -23,6 +24,8 @@ def main():
     computer = Player("computer", False)
     players = [player, computer]
     deck = Deck(screen, players)
+    pile = Pile(deck, players)
+    pile.deal()
     player_selection = []
     
     # buttons

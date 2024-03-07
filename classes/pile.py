@@ -6,4 +6,4 @@ class Pile:
     def deal(self):
         for _ in range(5):
             for player in self.players:
-                player.hand.append(self.cards.pop(0))
+                player.hand.append(self.deck.cards.pop(0))
