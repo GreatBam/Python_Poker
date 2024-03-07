@@ -16,7 +16,7 @@ def main():
     width = screen.get_width()
     height = screen.get_height()
     clock = pygame.time.Clock()
-    fps = 30
+    fps = 60
     running = True
     
     # game setup
@@ -51,7 +51,7 @@ def main():
         for card in computer.hand:
             card.draw_back()
             
-        # card change button
+        # buttons
         change_button.draw()
         change_button.change_button_event_handler(event, player_selection, player.hand, deck)
         play_button.draw()
