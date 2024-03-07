@@ -46,8 +46,9 @@ class Button:
                     for player in players:
                         if player.name == "computer":
                             player.show_cards = False
-                        deck.cards.append(player.hand)
                         player.hand.clear()
+                    deck.cards.clear()
+                    deck.create_deck()
                     deck.shuffle()
                     pile.deal()
                     display.set()

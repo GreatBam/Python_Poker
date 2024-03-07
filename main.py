@@ -28,6 +28,7 @@ def main():
     
     # deck creation
     deck = Deck(screen, players)
+    deck.create_deck()
     
     # pile creation and cards dealing
     pile = Pile(deck, players)

@@ -9,7 +9,7 @@ class Deck:
     def __init__(self, screen:object, players:list):
         self.screen = screen
         self.players = players
-        self.cards = self.create_deck()
+        self.cards = []
         self.shuffle()
         
     def shuffle(self):
@@ -24,5 +24,4 @@ class Deck:
                 suit_path = (re.findall(r'\b\w', suit)[0]).lower()
                 rank_path = rank.lower()
                 image = pygame.image.load(f'images/{suit_path}{rank_path}.png')
-                cards.append(Card(suit, rank, image, self.screen, 0, 0))
-        return cards
+                self.cards.append(Card(suit, rank, image, self.screen, 0, 0))
