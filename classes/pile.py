@@ -1,3 +1,7 @@
+# Python poker card game
+# Jonathan Gabioud
+# 2024-03-05
+
 class Pile:
     def __init__(self, deck:object, players:list):
         self.deck = deck

@@ -1,3 +1,7 @@
+# Python poker card game
+# Jonathan Gabioud
+# 2024-03-05
+
 class Change:
     def __init__(self, deck:object, display:object):
         self.deck = deck

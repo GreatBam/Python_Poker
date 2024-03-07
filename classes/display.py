@@ -1,3 +1,7 @@
+# Python poker card game
+# Jonathan Gabioud
+# 2024-03-05
+
 class Display:
     def __init__(self, players:list):
         self.players = players
