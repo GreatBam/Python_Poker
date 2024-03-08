@@ -91,23 +91,25 @@ def main():
                 card.draw_back()
 
         # draw buttons
-        change_button.draw()
-        play_button.draw()
-        reset_button.draw()
+        if(player.play_state == False):
+            play_button.draw()
+            play_button.play_button_event_handler(event,
+                                                player,
+                                                computer)
+            change_button.draw()
+            change_button.change_button_event_handler(event,
+                                                    player_selection,
+                                                    player,
+                                                    change)
+        else:
+            reset_button.draw()
+            reset_button.reset_button_event_handler(event,
+                                                    players,
+                                                    deck,
+                                                    pile,
+                                                    display)
 
         # event listeners
-        change_button.change_button_event_handler(event,
-                                                  player_selection,
-                                                  player,
-                                                  change)
-        play_button.play_button_event_handler(event,
-                                              player,
-                                              computer)
-        reset_button.reset_button_event_handler(event,
-                                                players,
-                                                deck,
-                                                pile,
-                                                display)
 
         # display
         pygame.display.flip()
