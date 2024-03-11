@@ -86,3 +86,7 @@ class Score:
             "K": 0,
             "A": 0
         }
+        pair_list = []
+        trio_list = []
+        four_list = []
+        
