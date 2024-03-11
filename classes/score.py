@@ -100,4 +100,13 @@ class Score:
                 trio_list.append(key)
             if rank_matrix[key] == 4:
                 four_list.append(key)
-        
+        if(len(pair_list) == 1) and len(trio_list) == 0:
+            return "pair"
+        if(len(pair_list) == 2):
+            return "two pair"
+        if(len(trio_list) == 1) and len(pair_list) == 0:
+            return "three of a kind"
+        if(len(four_list) == 1):
+            return "four of a kind"
+        if(len(pair_list) == 1 and len(trio_list) == 1):
+            return "full house"
