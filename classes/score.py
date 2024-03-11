@@ -32,43 +32,11 @@ class Score:
     def straight_flush(self, suits:list, ranks:list):
         return True if self.flush(suits) and self.straight(ranks) else False
     
-    def four_of_a_kind(self, ranks:list):
-        for rank in ranks:
-            if ranks.count(rank) == 4:
-                return True
-        return False
-    
-    def full_house(self, ranks:list):
-        pass
-    
     def flush(self, suits:list):
         return True if len(set(suits)) == 1 else False
     
     def straight(self, ranks:list):
         return False
-    
-    def three_of_a_kind(self, ranks:list):
-        for rank in ranks:
-            if ranks.count(rank) == 3:
-                return True
-        return False
-    
-    def two_pair(self, ranks:list):
-        pairs = 0
-        for rank in ranks:
-            if ranks.count(rank) == 1:
-                pairs += 1
-        return True if pairs >= 3 else False
-    
-    def pair(self, ranks:list):
-        for rank in ranks:
-            if ranks.count(rank) == 1:
-                return True
-        return False
-    
-    def compare_hands(self):
-        player_final_hand = self.check_poker_hand(self.player_hand)
-        computer_final_hand = self.check_poker_hand(self.computer_hand)
         
     def rank_counter(self, ranks:list):
         rank_matrix = {
