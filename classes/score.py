@@ -69,3 +69,20 @@ class Score:
     def compare_hands(self):
         player_final_hand = self.check_poker_hand(self.player_hand)
         computer_final_hand = self.check_poker_hand(self.computer_hand)
+        
+    def rank_counter(self, ranks:list):
+        rank_matrix = {
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "J": 0,
+            "Q": 0,
+            "K": 0,
+            "A": 0
+        }
