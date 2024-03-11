@@ -40,7 +40,7 @@ class Button:
                         player.play_state = True
                         computer.show_cards = True
                         score = Score(player.hand, computer.hand)
-                        print(score.check_poker_hand(player.hand))
+                        score.check_poker_hand(player.hand)
                     
     def reset_button_event_handler(self, event, players:list, deck:object, pile:object, display:object):
         if event.type == pygame.MOUSEBUTTONDOWN:

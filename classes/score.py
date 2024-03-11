@@ -28,7 +28,7 @@ class Score:
         #     return "pair"
         # else:
         #     return "high card"
-        print(self.rank_counter(ranks))
+        print(self.rank_counter(ranks, suits))
 
     def straight_flush(self, suits:list, ranks:list):
         return True if self.flush(suits) and self.straight(ranks) else False
@@ -39,7 +39,7 @@ class Score:
     def straight(self, ranks:list):
         return False
         
-    def rank_counter(self, ranks:list):
+    def rank_counter(self, ranks:list, suits:list):
         rank_matrix = [
             {"id":1, "rank":"2", "value": 0},
             {"id":2, "rank":"3", "value": 0},
@@ -80,16 +80,20 @@ class Score:
             return "four of a kind"
         if(len(pair_list) == 1 and len(trio_list) == 1):
             return "full house"
+        if len(set(suits)) == 1:
+            return "flush"
         if(len(trio_list) == 1) and len(pair_list) == 0:
             return "three of a kind"
         if(len(pair_list) == 2):
             return "two pair"
         if(len(pair_list) == 1) and len(trio_list) == 0:
             return "pair"
-        # for key in rank_matrix:
-        #     if rank_matrix[key] == 1:
-        #         if rank_matrix[key+1] == 1:
-        #             if rank_matrix[key+2] == 1:
-        #                 if rank_matrix[key+3] == 1:
-        #                     if rank_matrix[key+4] == 1:
-        #                         return "straight"
+        for key in rank_matrix:
+            value = key['value']
+            id = key['id']
+            # if key["value"] == 1:
+            #     if key["id"]+1["value"] == 1:
+            #         if key["id"+2]["value"] == 1:
+            #             if key["id"+3]["value"] == 1:
+            #                 if key["id"+4]["value"] == 1:
+            #                     return "straight"
