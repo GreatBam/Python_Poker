@@ -57,21 +57,6 @@ class Score:
             {"id":12, "rank":"K", "value": 0},
             {"id":13, "rank":"A", "value": 0}
         ]
-        rank_straight_matrix = {
-            "2" : 0,
-            "3" : 0,
-            "4" : 0,
-            "5" : 0,
-            "6" : 0,
-            "7" : 0,
-            "8" : 0,
-            "9" : 0,
-            "10" : 0,
-            "J" : 0,
-            "Q" : 0,
-            "K" : 0,
-            "A" : 0
-        }
         print(rank_matrix)
         pair_list = []
         trio_list = []
@@ -113,12 +98,3 @@ class Score:
         if(len(pair_list) == 1) and len(trio_list) == 0:
             return "pair"
         return "high card"
-        # for key in rank_matrix:
-        #     value = key['value']
-        #     id = key['id']
-        #     # if key["value"] == 1:
-        #     #     if key["id"]+1["value"] == 1:
-        #     #         if key["id"+2]["value"] == 1:
-        #     #             if key["id"+3]["value"] == 1:
-        #     #                 if key["id"+4]["value"] == 1:
-        #     #                     return "straight"
