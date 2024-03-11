@@ -109,8 +109,6 @@ def main():
                                                     pile,
                                                     display)
 
-        # event listeners
-
         # display
         pygame.display.flip()
 
