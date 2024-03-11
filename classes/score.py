@@ -93,4 +93,11 @@ class Score:
             for key in rank_matrix:
                 if rank == key:
                     rank_matrix[key] += 1
+        for key in rank_matrix:
+            if rank_matrix[key] == 2:
+                pair_list.append(key)
+            if rank_matrix[key] == 3:
+                trio_list.append(key)
+            if rank_matrix[key] == 4:
+                four_list.append(key)
         
