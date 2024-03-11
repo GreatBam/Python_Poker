@@ -2,6 +2,8 @@
 # Jonathan Gabioud
 # 2024-03-05
 
+import re
+
 class Score:
     def __init__(self, player_hand:list, computer_hand:list):
         self.player_hand = player_hand
@@ -55,45 +57,68 @@ class Score:
             {"id":12, "rank":"K", "value": 0},
             {"id":13, "rank":"A", "value": 0}
         ]
+        rank_straight_matrix = {
+            "2" : 0,
+            "3" : 0,
+            "4" : 0,
+            "5" : 0,
+            "6" : 0,
+            "7" : 0,
+            "8" : 0,
+            "9" : 0,
+            "10" : 0,
+            "J" : 0,
+            "Q" : 0,
+            "K" : 0,
+            "A" : 0
+        }
         print(rank_matrix)
         pair_list = []
         trio_list = []
         four_list = []
+        numbers = ""
         for rank in ranks:
             for key in rank_matrix:
                 if rank == key['rank']:
                     key['value'] += 1
         for key in rank_matrix:
+            numbers += str(key['value'])
             if key['value'] == 2:
                 pair_list.append(key)
             if key['value'] == 3:
                 trio_list.append(key)
             if key['value'] == 4:
                 four_list.append(key)
+        print(numbers)
         print(pair_list)
         print(len(pair_list))
         print(trio_list)
         print(len(trio_list))
         print(four_list)
         print(len(four_list))
+        if re.findall('11111',numbers) and len(set(suits)) == 1:
+            return "straight flush"
         if(len(four_list) == 1):
             return "four of a kind"
         if(len(pair_list) == 1 and len(trio_list) == 1):
             return "full house"
         if len(set(suits)) == 1:
             return "flush"
+        if re.findall('11111',numbers):
+            return "straight"
         if(len(trio_list) == 1) and len(pair_list) == 0:
             return "three of a kind"
         if(len(pair_list) == 2):
             return "two pair"
         if(len(pair_list) == 1) and len(trio_list) == 0:
             return "pair"
-        for key in rank_matrix:
-            value = key['value']
-            id = key['id']
-            # if key["value"] == 1:
-            #     if key["id"]+1["value"] == 1:
-            #         if key["id"+2]["value"] == 1:
-            #             if key["id"+3]["value"] == 1:
-            #                 if key["id"+4]["value"] == 1:
-            #                     return "straight"
+        return "high card"
+        # for key in rank_matrix:
+        #     value = key['value']
+        #     id = key['id']
+        #     # if key["value"] == 1:
+        #     #     if key["id"]+1["value"] == 1:
+        #     #         if key["id"+2]["value"] == 1:
+        #     #             if key["id"+3]["value"] == 1:
+        #     #                 if key["id"+4]["value"] == 1:
+        #     #                     return "straight"

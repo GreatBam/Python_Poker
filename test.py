@@ -1,3 +1,5 @@
+import re
+
 rank_matrix = [
     {"id":1, "rank":"2", "value": 0},
     {"id":2, "rank":"3", "value": 0},
@@ -13,7 +15,35 @@ rank_matrix = [
     {"id":12, "rank":"K", "value": 0},
     {"id":13, "rank":"A", "value": 0}
 ]
+rank_straight_matrix = {
+    "2" : 0,
+    "3" : 0,
+    "4" : 1,
+    "5" : 1,
+    "6" : 1,
+    "7" : 1,
+    "8" : 1,
+    "9" : 0,
+    "10" : 0,
+    "J" : 0,
+    "Q" : 0,
+    "K" : 0,
+    "A" : 0
+}
 
-for i in range(len(rank_matrix)):
-    for key in rank_matrix:
-        print(key[i+1])
+numbers = ""
+
+for rank in rank_straight_matrix:
+    numbers += str(rank_straight_matrix[rank])
+    
+print(numbers)
+
+y = re.findall('11111',numbers)
+
+print(y)
+
+# print(len(rank_straight_matrix))
+# print(rank_straight_matrix["2"])
+
+# for i in rank_straight_matrix:
+#     print(rank_straight_matrix[i])
