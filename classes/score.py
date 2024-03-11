@@ -89,4 +89,8 @@ class Score:
         pair_list = []
         trio_list = []
         four_list = []
+        for rank in ranks:
+            for key in rank_matrix:
+                if rank == key:
+                    rank_matrix[key] += 1
         
