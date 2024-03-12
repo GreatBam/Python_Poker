@@ -15,6 +15,11 @@ class Score:
         print(self.rank_counter(ranks, suits))
         
     def rank_counter(self, ranks:list, suits:list):
+        # Set all the variables
+        numbers = ""
+        pair_list = []
+        trio_list = []
+        four_list = []
         rank_count_list = {
             "2" : 0,
             "3" : 0,
@@ -30,14 +35,12 @@ class Score:
             "K" : 0,
             "A" : 0
         }
-        pair_list = []
-        trio_list = []
-        four_list = []
-        numbers = ""
+        # Count the number of each rank
         for rank in ranks:
             for key in rank_count_list:
                 if rank == key:
                     rank_count_list[key] += 1
+        # Set the numbers variable, the pair, trio and four lists
         for key in rank_count_list:
             numbers += str(rank_count_list[key])
             if rank_count_list[key] == 2:
@@ -46,6 +49,7 @@ class Score:
                 trio_list.append(key)
             if rank_count_list[key] == 4:
                 four_list.append(key)
+        # Check the poker hand
         if re.findall('11111',numbers) and len(set(suits)) == 1:
             return "straight flush"
         if(len(four_list) == 1):
