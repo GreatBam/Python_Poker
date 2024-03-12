@@ -74,8 +74,8 @@ class Score:
         if(player_score_value == computer_score_value):
             return "draw"
         if(player_score_value > computer_score_value):
-            return "player wins"
-        return "computer wins"
+            return f"Player wins with {player_score['name']}"
+        return f"Computer wins with {computer_score['name']}"
     
     def show_result(self, player_hand:list, computer_hand:list):
         player_score = self.check_poker_hand(player_hand)
