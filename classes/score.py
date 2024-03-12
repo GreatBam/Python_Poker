@@ -12,12 +12,12 @@ class Score:
         self.player_hand = player_hand
         self.computer_hand = computer_hand
         
+    # def check_poker_hand(self, hand:list):
+    #     print(self.rank_counter(ranks, suits))
+        
     def check_poker_hand(self, hand:list):
         suits = [card.suit for card in hand]
         ranks = [card.rank for card in hand]
-        print(self.rank_counter(ranks, suits))
-        
-    def rank_counter(self, ranks:list, suits:list):
         # Set all the variables
         numbers = ""
         pair_list = []
@@ -75,4 +75,4 @@ class Score:
         player_score = self.check_poker_hand(self.player_hand)
         computer_score = self.check_poker_hand(self.computer_hand)
         print(player_score, computer_score)
-        pygame.draw.rect(self.screen, "light_gray", [self.button_position[0], self.button_position[1], 140, 40], 0, 10)
+        pygame.draw.rect(self.screen, "light_gray", [10, 10, 140, 40], 0, 10)
