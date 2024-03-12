@@ -11,9 +11,6 @@ class Score:
         self.height = height
         self.show = False
         
-    # def check_poker_hand(self, hand:list):
-    #     print(self.rank_counter(ranks, suits))
-        
     def check_poker_hand(self, hand:list):
         # Get the suits and ranks
         suits = [card.suit for card in hand]
