@@ -42,38 +42,39 @@ class Score:
         return False
         
     def rank_counter(self, ranks:list, suits:list):
-        rank_matrix = [
-            {"id":1, "rank":"2", "value": 0},
-            {"id":2, "rank":"3", "value": 0},
-            {"id":3, "rank":"4", "value": 0},
-            {"id":4, "rank":"5", "value": 0},
-            {"id":5, "rank":"6", "value": 0},
-            {"id":6, "rank":"7", "value": 0},
-            {"id":7, "rank":"8", "value": 0},
-            {"id":8, "rank":"9", "value": 0},
-            {"id":9, "rank":"10", "value": 0},
-            {"id":10, "rank":"J", "value": 0},
-            {"id":11, "rank":"Q", "value": 0},
-            {"id":12, "rank":"K", "value": 0},
-            {"id":13, "rank":"A", "value": 0}
-        ]
-        print(rank_matrix)
+        rank_count_list = {
+            "2" : 0,
+            "3" : 0,
+            "4" : 0,
+            "5" : 0,
+            "6" : 0,
+            "7" : 0,
+            "8" : 0,
+            "9" : 0,
+            "10" : 0,
+            "J" : 0,
+            "Q" : 0,
+            "K" : 0,
+            "A" : 0
+        }
+        # print(rank_matrix)
         pair_list = []
         trio_list = []
         four_list = []
         numbers = ""
         for rank in ranks:
-            for key in rank_matrix:
-                if rank == key['rank']:
-                    key['value'] += 1
-        for key in rank_matrix:
-            numbers += str(key['value'])
-            if key['value'] == 2:
+            for key in rank_count_list:
+                if rank == key:
+                    rank_count_list[key] += 1
+        for key in rank_count_list:
+            numbers += str(rank_count_list[key])
+            if rank_count_list[key] == 2:
                 pair_list.append(key)
-            if key['value'] == 3:
+            if rank_count_list[key] == 3:
                 trio_list.append(key)
-            if key['value'] == 4:
+            if rank_count_list[key] == 4:
                 four_list.append(key)
+        print(rank_count_list)
         print(numbers)
         print(pair_list)
         print(len(pair_list))
