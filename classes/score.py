@@ -84,7 +84,10 @@ class Score:
         font = pygame.font.SysFont("Tahoma", 35)
         text_color = (255, 255, 255)
         main_text = font.render(label, True, text_color)
-        main_text_position = (375, 340)
+        if(label == "draw"):
+            main_text_position = (375, 340)
+        else:
+            main_text_position = (240, 340)
         # print(player_score, computer_score)
         pygame.draw.rect(self.screen, (255, 0, 0), [50, 225, 700, 250], 0, 10)
         self.screen.blit(main_text, main_text_position)
