@@ -66,7 +66,7 @@ class Score:
             return {"name":"two pair", "value":2}
         if(len(pair_list) == 1) and len(trio_list) == 0:
             return {"name":"pair", "value":1}
-        return "high card"
+        return {"name":"high card", "value":1}
     
     def compare_hands(self, player_score:object, computer_score:object):
         player_score_value = player_score['value']
