@@ -39,7 +39,7 @@ class Button:
                     if(player.play_state == False):
                         player.play_state = True
                         computer.show_cards = True
-                        score = Score(player.hand, computer.hand)
+                        score = Score(self.screen, self.width, self.height, player.hand, computer.hand)
                         score.check_poker_hand(player.hand)
                     
     def reset_button_event_handler(self, event, players:list, deck:object, pile:object, display:object):

@@ -5,7 +5,10 @@
 import pygame, re
 
 class Score:
-    def __init__(self, player_hand:list, computer_hand:list):
+    def __init__(self, screen:object, width:int, height:int, player_hand:list, computer_hand:list):
+        self.screen = screen
+        self.width = width
+        self.height = height
         self.player_hand = player_hand
         self.computer_hand = computer_hand
         
@@ -72,4 +75,4 @@ class Score:
         player_score = self.check_poker_hand(self.player_hand)
         computer_score = self.check_poker_hand(self.computer_hand)
         print(player_score, computer_score)
-        pygame.draw.rect(self.screen, self.button_color, [self.button_position[0], self.button_position[1], 140, 40], 0, 10)
+        pygame.draw.rect(self.screen, "light_gray", [self.button_position[0], self.button_position[1], 140, 40], 0, 10)
