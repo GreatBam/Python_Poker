@@ -31,15 +31,6 @@ class Score:
         # else:
         #     return "high card"
         print(self.rank_counter(ranks, suits))
-
-    def straight_flush(self, suits:list, ranks:list):
-        return True if self.flush(suits) and self.straight(ranks) else False
-    
-    def flush(self, suits:list):
-        return True if len(set(suits)) == 1 else False
-    
-    def straight(self, ranks:list):
-        return False
         
     def rank_counter(self, ranks:list, suits:list):
         rank_count_list = {
