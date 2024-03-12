@@ -52,7 +52,7 @@ class Button:
                                 return
                             else:
                                 player.play_state = False
-                                player.changes = 1000
+                                player.changes = 3
                         if player.name == "computer":
                             player.show_cards = False
                         player.hand.clear()
