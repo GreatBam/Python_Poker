@@ -89,5 +89,5 @@ class Score:
         else:
             main_text_position = (240, 340)
         # print(player_score, computer_score)
-        pygame.draw.rect(self.screen, (255, 0, 0), [50, 225, 700, 250], 0, 10)
+        pygame.draw.rect(self.screen, (45, 146, 212), [50, 225, 700, 250], 0, 10)
         self.screen.blit(main_text, main_text_position)
