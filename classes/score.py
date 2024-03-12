@@ -5,12 +5,11 @@
 import pygame, re
 
 class Score:
-    def __init__(self, screen:object, width:int, height:int, player_hand:list, computer_hand:list):
+    def __init__(self, screen:object, width:int, height:int):
         self.screen = screen
         self.width = width
         self.height = height
-        self.player_hand = player_hand
-        self.computer_hand = computer_hand
+        self.show = False
         
     # def check_poker_hand(self, hand:list):
     #     print(self.rank_counter(ranks, suits))
@@ -72,8 +71,8 @@ class Score:
             return "pair"
         return "high card"
     
-    def show_result(self):
-        player_score = self.check_poker_hand(self.player_hand)
-        computer_score = self.check_poker_hand(self.computer_hand)
+    def show_result(self, player_hand:list, computer_hand:list):
+        player_score = self.check_poker_hand(player_hand)
+        computer_score = self.check_poker_hand(computer_hand)
         print(player_score, computer_score)
         pygame.draw.rect(self.screen, "light_gray", [10, 10, 140, 40], 0, 10)

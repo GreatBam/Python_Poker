@@ -10,6 +10,7 @@ from classes.pile import Pile
 from classes.display import Display
 from classes.change import Change
 from classes.button import Button
+from classes.score import Score
 
 def main():
     # pygame setup
@@ -45,7 +46,10 @@ def main():
     # player card change selection
     player_selection = []
     
-    # buttons
+    # prepare score object
+    score = Score(screen, width, height)
+    
+    # create buttons
     change_button = Button(screen,
                            width,
                            height,
