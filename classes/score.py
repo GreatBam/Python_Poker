@@ -78,9 +78,10 @@ class Score:
     def show_result(self, player_hand:list, computer_hand:list):
         player_score = self.check_poker_hand(player_hand)
         computer_score = self.check_poker_hand(computer_hand)
+        label = self.compare_hands(player_score, computer_score)
         font = pygame.font.SysFont("Tahoma", 35)
         text_color = (255, 255, 255)
-        main_text = font.render("label", True, text_color)
+        main_text = font.render(label, True, text_color)
         main_text_position = (375, 340)
         # print(player_score, computer_score)
         pygame.draw.rect(self.screen, (255, 0, 0), [50, 225, 700, 250], 0, 10)
