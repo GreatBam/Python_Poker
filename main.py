@@ -80,7 +80,8 @@ def main():
                 running = False
 
         # screen background color
-        screen.fill("green")
+        color = (57, 195, 55)
+        screen.fill(color)
         
         # RENDER GAME
         for card in player.hand:
