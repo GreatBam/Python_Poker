@@ -51,21 +51,21 @@ class Score:
                 four_list.append(key)
         # Check the poker hand
         if re.findall('11111',numbers) and len(set(suits)) == 1:
-            return "straight flush"
+            return {"name":"straight flush", "value":8}
         if(len(four_list) == 1):
-            return "four of a kind"
+            return {"name":"four of a kind", "value":7}
         if(len(pair_list) == 1 and len(trio_list) == 1):
-            return "full house"
+            return {"name":"full house", "value":6}
         if len(set(suits)) == 1:
-            return "flush"
+            return {"name":"flush", "value":5}
         if re.findall('11111',numbers):
-            return "straight"
+            return {"name":"straight", "value":4}
         if(len(trio_list) == 1) and len(pair_list) == 0:
-            return "three of a kind"
+            return {"name":"three of a kind", "value":3}
         if(len(pair_list) == 2):
-            return "two pair"
+            return {"name":"two pair", "value":2}
         if(len(pair_list) == 1) and len(trio_list) == 0:
-            return "pair"
+            return {"name":"pair", "value":1}
         return "high card"
     
     def compare_hands(self, player_score:str, computer_score:str):
