@@ -57,7 +57,6 @@ class Score:
             "K" : 0,
             "A" : 0
         }
-        # print(rank_matrix)
         pair_list = []
         trio_list = []
         four_list = []
@@ -74,14 +73,6 @@ class Score:
                 trio_list.append(key)
             if rank_count_list[key] == 4:
                 four_list.append(key)
-        print(rank_count_list)
-        print(numbers)
-        print(pair_list)
-        print(len(pair_list))
-        print(trio_list)
-        print(len(trio_list))
-        print(four_list)
-        print(len(four_list))
         if re.findall('11111',numbers) and len(set(suits)) == 1:
             return "straight flush"
         if(len(four_list) == 1):
