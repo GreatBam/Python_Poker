@@ -74,5 +74,5 @@ class Score:
     def show_result(self, player_hand:list, computer_hand:list):
         player_score = self.check_poker_hand(player_hand)
         computer_score = self.check_poker_hand(computer_hand)
-        print(player_score, computer_score)
-        pygame.draw.rect(self.screen, "light_gray", [10, 10, 140, 40], 0, 10)
+        # print(player_score, computer_score)
+        pygame.draw.rect(self.screen, (255, 0, 0), [50, 225, 700, 250], 0, 10)
