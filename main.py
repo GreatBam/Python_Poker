@@ -112,6 +112,10 @@ def main():
                                                     deck,
                                                     pile,
                                                     display)
+            
+        # show result
+        if(player.play_state == True):
+            score.show_result(player.hand, computer.hand)
 
         # display
         pygame.display.flip()
