@@ -16,6 +16,7 @@ class Score:
     #     print(self.rank_counter(ranks, suits))
         
     def check_poker_hand(self, hand:list):
+        # Get the suits and ranks
         suits = [card.suit for card in hand]
         ranks = [card.rank for card in hand]
         # Set all the variables
