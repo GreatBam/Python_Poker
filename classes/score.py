@@ -69,9 +69,11 @@ class Score:
         return "high card"
     
     def compare_hands(self, player_score:object, computer_score:object):
-        if(player_score.value == computer_score.value):
+        player_score_value = player_score['value']
+        computer_score_value = computer_score['value']
+        if(player_score_value == computer_score_value):
             return "draw"
-        if(player_score.value > computer_score.value):
+        if(player_score_value > computer_score_value):
             return "player wins"
         return "computer wins"
     
