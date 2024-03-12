@@ -68,9 +68,12 @@ class Score:
             return {"name":"pair", "value":1}
         return "high card"
     
-    def compare_hands(self, player_score:str, computer_score:str):
-        if(player_score == computer_score):
+    def compare_hands(self, player_score:object, computer_score:object):
+        if(player_score.value == computer_score.value):
             return "draw"
+        if(player_score.value > computer_score.value):
+            return "player wins"
+        return "computer wins"
     
     def show_result(self, player_hand:list, computer_hand:list):
         player_score = self.check_poker_hand(player_hand)
