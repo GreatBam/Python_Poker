@@ -2,7 +2,7 @@
 # Jonathan Gabioud
 # 2024-03-05
 
-import re
+import pygame, re
 
 class Score:
     def __init__(self, player_hand:list, computer_hand:list):
@@ -67,3 +67,9 @@ class Score:
         if(len(pair_list) == 1) and len(trio_list) == 0:
             return "pair"
         return "high card"
+    
+    def show_result(self):
+        player_score = self.check_poker_hand(self.player_hand)
+        computer_score = self.check_poker_hand(self.computer_hand)
+        print(player_score, computer_score)
+        pygame.draw.rect(self.screen, self.button_color, [self.button_position[0], self.button_position[1], 140, 40], 0, 10)
