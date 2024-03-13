@@ -83,7 +83,8 @@ class Score:
         label = self.compare_hands(player_score, computer_score)
         font = pygame.font.SysFont("Tahoma", 35)
         text_color = (255, 255, 255)
-        frame_color = (45, 146, 212)
+        frame_color = (45, 146, 212) # player win color
+        frame_color = (226, 32, 32 ) # computer win color
         main_text = font.render(label, True, text_color)
         if(label == "draw"):
             main_text_position = (375, 340)
