@@ -83,10 +83,11 @@ class Score:
         label = self.compare_hands(player_score, computer_score)
         font = pygame.font.SysFont("Tahoma", 35)
         text_color = (255, 255, 255)
+        frame_color = (45, 146, 212)
         main_text = font.render(label, True, text_color)
         if(label == "draw"):
             main_text_position = (375, 340)
         else:
             main_text_position = (240, 340)
-        pygame.draw.rect(self.screen, (45, 146, 212), [50, 225, 700, 250], 0, 10)
+        pygame.draw.rect(self.screen, frame_color, [50, 225, 700, 250], 0, 10)
         self.screen.blit(main_text, main_text_position)
